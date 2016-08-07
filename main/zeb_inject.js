@@ -1,5 +1,6 @@
 (function (){
 	var status = 'disableComments';
+	chrome.runtime.sendMessage("init");
 	
 	chrome.extension.onMessage.addListener(function(msg, sender, sendResponse) {
 		if (msg.action == 'disableZebra') {
