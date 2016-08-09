@@ -1,24 +1,24 @@
 (function (){
 	
 	chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-		processTitle('Disable Zebra');	//init
+		processTitle('Zebra Stop is turned off');	//init
 	});
 
 	chrome.browserAction.onClicked.addListener(function(tab) {
-		processTitle('Enable Zebra');	//toggle
+		processTitle('Zebra Stop is turned on');	//toggle
 	});
 	
 	function processTitle(title) {
 		chrome.browserAction.getTitle({}, function(result) {
 			if (result == title) {
-				toggle ('zebra-128.png', 'Disable Zebra', 'enableZebra');
+				update ('zebra-128.png', 'Zebra Stop is turned off', 'enableZebraComments');
 			} else {
-				toggle ('zebra-crossed-128.png', 'Enable Zebra', 'disableZebra');
+				update ('zebra-crossed-128.png', 'Zebra Stop is turned on', 'disableZebraComments');
 			}
 		});
 	}
 	
-	function toggle(icon, title, msg) {
+	function update(icon, title, msg) {
 		chrome.browserAction.setIcon({ path: icon });
 		chrome.browserAction.setTitle({ title: title });
 		chrome.tabs.query({}, function(tabs){
