@@ -21,7 +21,23 @@
 
   "content_scripts": [
     {
-      "matches": ["*://vk.com/true_lentach*", "*://vk.com/oldlentach*", "*://vk.com/feed*"],
+      "matches": [
+	  "*://vk.com/true_lentach*",
+	  "*://vk.com/feed*",
+	  "*://vk.com/wall*",
+	  "*://vk.com/oldlentach*",
+	  
+	  "*://m.vk.com/true_lentach*", 
+	  "*://m.vk.com/feed*",
+	  "*://m.vk.com/wall*",
+	  "*://m.vk.com/oldlentach*",
+	  
+	  "*://0.vk.com/true_lentach*", 
+	  "*://0.vk.com/feed*",
+	  "*://0.vk.com/wall*",
+	  "*://0.vk.com/oldlentach*"
+	  ],
+	  
       "js": ["zeb_inject.js"]
     }
   ]
